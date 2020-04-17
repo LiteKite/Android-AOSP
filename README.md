@@ -140,9 +140,21 @@ aosp_root$ lunch [build-variant]
 
 aosp_root$ make -j16
 
-<b>Clean the entire build directory [/aosp_root/out/] by:
+<b>Clean the entire build directory [/aosp_root/out/] by:</b>
 
 aosp_root$ make clean
+
+## Updating Framework APIs
+
+<b>If you try to make (or) add changes in the Framework APIs, then you need to update the build as well</b>
+
+aosp_root$ make update-api
+
+<b>These APIs are recorded and updated on the below files:</b>
+
+root_aosp/frameworks/base/api/current.txt
+
+root_aosp/frameworks/base/api/test-current.txt
 
 ## License
 
