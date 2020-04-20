@@ -64,6 +64,10 @@ aosp_root$ repo sync -j16 --force-sync
 
 aosp_root$ repo sync -j16 --fail-fast
 
+<b>Some known-issues while syncing AOSP:</b>
+
+https://source.android.com/setup/build/known-issues
+
 <b>Checking out all the projects in the repo:</b>
 
 Normally, when repo sync completes, it automatically checkout all projects to the current branch mentioned in the repo manifest file. If it does not checkout properly, try below:
@@ -155,6 +159,51 @@ aosp_root$ make update-api
 root_aosp/frameworks/base/api/current.txt
 
 root_aosp/frameworks/base/api/test-current.txt
+
+## Download Factory Images and AOSP Builds
+
+1) <b>AOSP CI Builds ></b> https://ci.android.com/builds/branches/aosp-master/grid
+
+2) <b>AOSP Factory Images ></b> https://developers.google.com/android/images
+
+## Working on AOSP with Android Studio
+
+<b>Run idegen.sh from aosp development tools</b>
+
+aosp_root$ make idegen && development/tools/idegen/idegen.sh
+
+The <b>android.ipr</b> will get generated on the /aosp_root/ path
+
+<b>Go to Studio > Help > Edit Custom VM and increase the memory:</b>
+
+-Xms1g
+-Xmx5g
+
+<b>Go to Studio > Help > Edit custom properties and increase file size limit:</b>
+
+idea.max.intellisense.filesize=100000
+
+Then, restart your IDE
+
+<b>Go to /aosp_root/ path and right click and open the "android.ipr" file with Android Studio.</b>
+
+After all the index process are done, go to "project structure > SDK" and create a new JDK (no_libraries) configuration.
+
+Then remove all of the jar entries under the "Classpath" tab to access only the aosp core libraries.
+
+## References
+
+1) <b>Embedded Android ></b> https://www.oreilly.com/library/view/embedded-android/9781449327958/ch04.html
+
+1) <b>Building AOSP ></b> https://www.polidea.com/blog/How-to-Build-your-Own-Android-Based-on-AOSP
+
+2) <b>Building Custom ROM ></b> https://www.talentica.com/blogs/build-custom-android-rom-using-android-open-source-projectaosp/
+
+3) <b>IDEGEN Development Tool from Google ></b> https://android.googlesource.com/platform/development/+/master/tools/idegen/README
+
+4) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
+
+5) <b>AOSP Code Search by Google ></b> https://cs.android.com
 
 ## License
 
