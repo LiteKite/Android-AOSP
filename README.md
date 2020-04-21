@@ -191,6 +191,74 @@ After all the index process are done, go to "project structure > SDK" and create
 
 Then remove all of the jar entries under the "Classpath" tab to access only the aosp core libraries.
 
+## Changing Android Boot Animation
+
+The <b>bootanimation.zip</b> file can be found in <b>system/media/</b> folder of an android powered device.
+
+During build time, the <b>bootanimation.zip</b> file is copied to the <b>system/media/</b> directory. 
+
+This can be done by Car.mk build file found in <b>/aosp_root/packages/services/Car/car_product/build/car.mk</b>
+
+PRODUCT_COPY_FILES += \
+    packages/services/Car/car_product/bootanimations/bootanimation-832.zip:system/media/bootanimation.zip
+
+<b>The original "bootanimation.zip" file is located at:</b>
+
+/aosp_root/packages/services/Car/car_product/bootanimations/bootanimation-832.zip
+
+<b>Making your own bootanimation.zip file:</b>
+
+1) Create a "new_folder" and go to that folder.
+
+2) Create <b>part0</b> folder inside "/new_folder/" and include all your PNG Animation Sequence Images.
+
+3) Create <b>desc.txt</b> file and edit the <b>desc.txt</b> file by following the animation format:
+
+   width height frame-rate
+   
+   p loops pause folder-sequence
+   
+   
+   <b>The example would be:</b>
+   
+   832 520 30
+   
+   p 1 100 part0
+
+4) After this, "new_folder" will have <b>part0</b> folder with images and <b>desc.txt</b> file.
+
+   new_folder$ ls
+   
+   part0 desc.txt
+   
+5) Create uncompressed format of bootanimation.zip file
+
+   new_folder$ zip -r -0 bootanimation.zip .
+   
+6) Rename <b>bootanimation.zip</b> file as <b>bootanimation-832.zip</b> file.
+   
+7) Copy and replace the new <b>bootanimation-832.zip</b> file in <b>/aosp_root/packages/services/Car/car_product/bootanimations/</b> path
+
+8) Build the aosp project and flash the new build image.
+
+9) <b>You can easily test this bootanimation by:</b>
+
+   $ adb root
+   
+   $ adb remount
+   
+   $ adb push bootanimation.zip /system/media/
+   
+10) <b>Make it executable:</b>
+
+    $ adb shell chmod 666 /system/media/bootanimation.zip
+   
+11) Restart the device, you will see the bootanimation.
+
+12) <b>If not working, then launch bootanimation via adb shell:</b>
+
+    $ adb shell bootanimation
+
 ## References
 
 1) <b>Embedded Android ></b> https://www.oreilly.com/library/view/embedded-android/9781449327958/ch04.html
@@ -204,6 +272,8 @@ Then remove all of the jar entries under the "Classpath" tab to access only the 
 4) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
 
 5) <b>AOSP Code Search by Google ></b> https://cs.android.com
+
+6) <b>Changing Android Boot Image and Animation ></b> https://www.digi.com/resources/documentation/digidocs/90001546/task/android/t_faq_change_android_boot_images.htm
 
 ## License
 
