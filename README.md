@@ -258,6 +258,22 @@ PRODUCT_COPY_FILES += \
 12) <b>If not working, then launch bootanimation via adb shell:</b>
 
     $ adb shell bootanimation
+    
+## Changing Android Boot Image:
+
+1) Use any online portal and convert PNG Boot Logo file into <b>PPM (Portable Pixmap Format)</b> format.
+
+2) Make sure that the image width and height are supported by the system. ex) 832 x 520
+
+3) Reduce the number of colors to 224 using <b>ppmquant</b>
+
+    $ ppmquant 224 custom_logo.ppm > custom_logo_224.ppm
+    
+4) Convert the image to ASCII format using <b>pnmnoraw</b>
+
+    $ pnmnoraw custom_logo_224.ppm > custom_logo_ascii_224.ppm
+    
+5) The final image would be <b>custom_logo_ascii_224.ppm</b> and replace this in your android build system.
 
 ## References
 
