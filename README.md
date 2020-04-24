@@ -283,13 +283,15 @@ PRODUCT_COPY_FILES += \
 
 2) <b>Building Custom ROM ></b> https://www.talentica.com/blogs/build-custom-android-rom-using-android-open-source-projectaosp/
 
-3) <b>IDEGEN Development Tool from Google ></b> https://android.googlesource.com/platform/development/+/master/tools/idegen/README
+3) <b>How to build Android ROMs on Ubuntu ></b> https://www.digitalocean.com/community/tutorials/how-to-build-android-roms-on-ubuntu-16-04
 
-4) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
+4) <b>IDEGEN Development Tool from Google ></b> https://android.googlesource.com/platform/development/+/master/tools/idegen/README
 
-5) <b>AOSP Code Search by Google ></b> https://cs.android.com
+5) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
 
-6) <b>Changing Android Boot Image and Animation ></b> https://www.digi.com/resources/documentation/digidocs/90001546/task/android/t_faq_change_android_boot_images.htm
+6) <b>AOSP Code Search by Google ></b> https://cs.android.com
+
+7) <b>Changing Android Boot Image and Animation ></b> https://www.digi.com/resources/documentation/digidocs/90001546/task/android/t_faq_change_android_boot_images.htm
 
 ## License
 
