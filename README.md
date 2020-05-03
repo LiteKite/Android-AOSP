@@ -279,19 +279,25 @@ PRODUCT_COPY_FILES += \
 
 1) <b>Embedded Android ></b> https://www.oreilly.com/library/view/embedded-android/9781449327958/ch04.html
 
-1) <b>Building AOSP ></b> https://www.polidea.com/blog/How-to-Build-your-Own-Android-Based-on-AOSP
+2) <b>Building AOSP ></b> https://www.polidea.com/blog/How-to-Build-your-Own-Android-Based-on-AOSP
 
-2) <b>Building Custom ROM ></b> https://www.talentica.com/blogs/build-custom-android-rom-using-android-open-source-projectaosp/
+3) <b>Building Custom ROM ></b> https://www.talentica.com/blogs/build-custom-android-rom-using-android-open-source-projectaosp/
 
-3) <b>How to build Android ROMs on Ubuntu ></b> https://www.digitalocean.com/community/tutorials/how-to-build-android-roms-on-ubuntu-16-04
+4) <b>How to build Android ROMs on Ubuntu ></b> https://www.digitalocean.com/community/tutorials/how-to-build-android-roms-on-ubuntu-16-04
 
-4) <b>IDEGEN Development Tool from Google ></b> https://android.googlesource.com/platform/development/+/master/tools/idegen/README
+5) <b>AOSP Part 1 by UDI COHEN ></b> http://blog.udinic.com/2014/05/24/aosp-part-1-get-the-code-using-the-manifest-and-repo
 
-5) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
+6) <b>AOSP Part 2 by UDI COHEN ></b> http://blog.udinic.com/2014/06/04/aosp-part-2-build-variants
 
-6) <b>AOSP Code Search by Google ></b> https://cs.android.com
+7) <b>AOSP Part 3 by UDI COHEN ></b> http://blog.udinic.com/2014/07/24/aosp-part-3-developing-efficiently
 
-7) <b>Changing Android Boot Image and Animation ></b> https://www.digi.com/resources/documentation/digidocs/90001546/task/android/t_faq_change_android_boot_images.htm
+8) <b>IDEGEN Development Tool from Google ></b> https://android.googlesource.com/platform/development/+/master/tools/idegen/README
+
+9) <b>Setting up AOSP with IntelliJ ></b> https://shuhaowu.com/blog/setting_up_intellij_with_aosp_development.html
+
+10) <b>AOSP Code Search by Google ></b> https://cs.android.com
+
+11) <b>Changing Android Boot Image and Animation ></b> https://www.digi.com/resources/documentation/digidocs/90001546/task/android/t_faq_change_android_boot_images.htm
 
 ## License
 
