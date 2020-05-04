@@ -166,6 +166,110 @@ root_aosp/frameworks/base/api/test-current.txt
 
 2) <b>AOSP Factory Images ></b> https://developers.google.com/android/images
 
+3) <b>Android Flash Tool ></b> https://flash.android.com
+
+4) <b>Flashing Devices ></b> https://source.android.com/setup/build/running
+
+## Accessing FastBoot
+
+Fastboot can be found in:
+
+<b>/aosp_root/out/host/linux-x86/bin/fastboot</b>
+
+Just copy it in your build and linux user directory to access it.
+
+aosp_root/out/target/product/[build-variant]$ cp /aosp_root/out/host/linux-x86/bin/fastboot .
+
+$ sudo cp aosp_root/out/host/linux-x86/bin/fastboot /usr/local/bin/fastboot
+
+$ fastboot devices
+
+That will list down connected fastboot devices.
+
+## Syncing changes to your device
+
+After successful build, you can sync the changes you've made to your device instead of flashing the build again and again.
+
+$ export ANDROID_PRODUCT_OUT=/aosp_root/out/target/product/[build-variant]
+
+$ adb root
+
+$ adb remount
+
+$ adb sync
+
+$ adb reboot
+
+## Working with ADB
+
+If your adb not detecting your connected device, kill it and start it again
+
+$ adb kill-server
+
+$ adb start-server
+
+<b>Lists all ABD devices:</b>
+
+$ adb devices
+
+<b>Accessing adb device wirelessly:</b>
+
+1) Run <b>$ adb tcpip 5555</b>
+
+2) Disconnect your device (remove the USB cable)
+
+3) Go to the Settings > About phone > Status to view the IP address of your phone. IP address will be available only if it has internet access.
+
+4) <b>adb connect [ip_address_of_your_device>:5555</b>
+
+5) Run <b>$ adb devices</b> to check whether the device was connected.
+
+6) Referenced from https://futurestud.io/tutorials/how-to-debug-your-android-app-over-wifi-without-root
+
+## AOSP Libraries
+
+All aosp project's shared common libraries are generated in the below path:
+
+/aosp_root/out/target/common/obj/JAVA_LIBRARIES/
+
+<b>Jetpack Libraries are in AOSP:</b>
+
+/aosp_root/frameworks/support/
+
+## JNI in AOSP:
+
+/aosp_root/libnativehelper/
+
+## AOSP APKs
+
+All AOSP Android Application APKs are generated in the below paths
+
+/aosp_root/out/target/product/[build-variant]/system/product/priv-app/
+
+/aosp_root/out/target/product/[build-variant]/system/product/app/
+
+/aosp_root/out/target/product/[build-variant]/system/app/
+
+/aosp_root/out/target/product/[build-variant]/system/priv-app/
+
+## Searching AOSP
+
+Search Java Code Files:
+
+$ jgrep
+
+Search Android Resource Files:
+
+$ resgrep
+
+Search C/C++ Files:
+
+$ cgrep
+
+Search anything:
+
+$ grep -nrw "anything_that_you_want_to_search"
+
 ## Working on AOSP with Android Studio
 
 <b>Run idegen.sh from aosp development tools</b>
