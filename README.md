@@ -44,9 +44,13 @@ aosp_root$ repo sync -j16
 
 <b>Sync only a specific project:</b>
 
-aosp_root$ repo sync [project-dir]
+aosp_root$ repo sync --force-sync [project-dir]
 
 [Project-dir] could be any directory like this - /aosp_root/packages/apps/Settings
+
+<b> Otherwise, we can go to the [project-dir] and sync it there:</b>
+
+aosp_root/[project-dir]$ repo sync .
 
 ## Resolving Repo Sync Errors
 
@@ -67,6 +71,10 @@ aosp_root$ repo sync -j16 --fail-fast
 <b>Some known-issues while syncing AOSP:</b>
 
 https://source.android.com/setup/build/known-issues
+
+<b>Checking Repo Status:</b>
+
+aosp_root$ repo status
 
 <b>Checking out all the projects in the repo:</b>
 
@@ -102,7 +110,7 @@ Delete those two [project].git
 
 <b>And, try sync the repo alone by:</b>
 
-aosp_root$ repo sync [project]
+aosp_root$ repo sync --force-sync [project]
 
 [project] could be any directory like this - /aosp_root/packages/apps/Settings
 
