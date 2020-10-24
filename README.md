@@ -36,6 +36,10 @@ TAG is the build Number that could be <android-10.0.0_r25> that you can choose f
 
 https://source.android.com/setup/start/build-numbers
 
+<b>Removing Repo</b>
+
+aosp_root$ rm -r .repo
+
 ## Sync the Repo
 
 <b>Sync the repo source code:</b>
