@@ -224,7 +224,7 @@ $ adb start-server
 
 $ adb devices
 
-<b>Accessing adb device wirelessly:</b>
+<b>(I) Accessing adb device wirelessly:</b>
 
 1) Run <b>$ adb tcpip 5555</b>
 
@@ -237,6 +237,18 @@ $ adb devices
 5) Run <b>$ adb devices</b> to check whether the device was connected.
 
 6) Referenced from https://futurestud.io/tutorials/how-to-debug-your-android-app-over-wifi-without-root
+
+<b>(II) Accessing adb device wirelessly:</b>
+
+1) Navigate to developer options on the device, and enable wireless debugging.
+
+2) Copy the IP Address and Port Number from the device (192.168.0.100:32435)
+
+3) Open the terminal and navigate to the android platform tools and enter IP Address and Port Number
+
+4) $ adb pair 192.168.0.100:32435
+
+5) Enter the pairing code from the device to the terminal.
 
 ## AOSP Libraries
 
